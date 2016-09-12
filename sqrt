@@ -1,0 +1,20 @@
+//square root
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	float n,s;
+	int i;
+	printf("enter the number : ");
+	scanf("%f",&n);
+	if(n>0)              //square root of negative number is not possible
+	{
+		s=n/2;                //sqrt of a no. will be <=it's half
+		for(i=0;i<n;i++)        //loop for finding the sqrt
+			s=(s+(n/s))/2;
+		printf("\nsq root is %f :",s);
+	}
+	else 
+		printf("\nnpt possib;e");
+	return 0;
+}
