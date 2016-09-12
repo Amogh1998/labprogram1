@@ -1,0 +1,32 @@
+//bubble sort
+#include<stdio.h>
+int main()
+{
+	int i,j,temp,n,a[10];
+	printf("Enter how many numbers : ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("\nEnter the %dth number : ",i+1);
+		scanf("%d",&a[i]);
+	}
+	printf("\nThe entered values are (before sortion) :\n");
+	for(i=0;i<n;i++)                    //loop to print the input
+		printf("%d\t",a[i]);
+	for(i=0;i<n;i++)                     //outer loop for sortion
+	{
+		for(j=0;j<n-1;j++)               //inner loop for sortion
+		{
+			if(a[j]>a[j+1])     
+			{
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+			}
+		}
+	}
+	printf("\n\nAfter sortion :\n");
+	for(i=0;i<n;i++)
+		printf("%d\t",a[i]);
+	return 0;
+}
