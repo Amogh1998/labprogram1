@@ -1,0 +1,18 @@
+//horners method
+#include<stdio.h>
+int main()
+{
+	int n,i,x,sum,psum,a[10];
+	printf("Enter the degree of the polynomial ; ");
+	scanf("%d",&n);
+	printf("\nEnter the value of x in the polynomial : ");
+	scanf("%d",&x);
+	printf("\nEnter the elements of the polynomial ; ");
+	for(i=0;i<=n;i++)         
+		scanf("%d",&a[i]);
+	for(i=n;i>0;i--)
+		sum=(sum+a[i])*x;            //multiplying the co=efficient with vlue of x and adding the different terms
+	psum=sum+a[0];
+	printf("%d",psum);
+	return 0;
+}
