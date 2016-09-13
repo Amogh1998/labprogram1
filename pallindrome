@@ -1,10 +1,22 @@
 //pallindrome
 #include<stdio.h>
+int reverse(int n);
 int main()
 {
-	int n,m,rev,rem;
+	int n,,temp,x;
 	printf("Enter the number : ");
 	scanf("%d",&n);
+	x=reverse(n);
+	if(x==temp)
+		printf("\n%d is pallindrome\nThe Pallindrome of %d is : %d",temp,x);
+	else
+		printf("\n%d is not a pallindrome",temp);
+	return 0;
+}
+
+int reverse(n)
+{
+	int m,rev,rem;
 	m=n;
 	rev=0;
 	while(n!=0)
@@ -13,9 +25,5 @@ int main()
 		rev=rev*10+rem;             //remaining digits
 		n/=10;
 	}
-	if(rev==m)
-		printf("\n%d is pallindrome\nThe Pallindrome of %d is : %d",m,m,rev);
-	else
-		printf("\n%d is not a pallindrome",m);
-	return 0;
-}
+	return rev;
+}	
