@@ -1,9 +1,9 @@
 //horners method using function
 #include<stdio.h>
-int horner(int, int,int);
+int horner(int a, int b,int c[]);
 int main()
 {
-	int n,x,psum1,a[10];
+	int n,x,psum1,a[10],q=10;
 	printf("Enter the degree of the polynomial ; ");
 	scanf("%d",&n);
 	printf("\nEnter the value of x in the polynomial : ");
@@ -15,7 +15,7 @@ int main()
 	printf("%d",psum1);
 	return 0;
 }
-int horner(int a, int b, int c[10])	
+int horner(int a, int b, int c[])	
 {
 	int i,sum=0,psum;
 	for(i=a;i>0;i--)
