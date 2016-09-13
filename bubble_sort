@@ -2,7 +2,7 @@
 #include<stdio.h>
 int main()
 {
-	int i,j,temp,n,a[10];
+	int i,j,temp,n,a[10],flag=1;
 	printf("Enter how many numbers : ");
 	scanf("%d",&n);
 	for(i=0;i<n;i++)
@@ -22,10 +22,15 @@ int main()
 				temp=a[j];
 				a[j]=a[j+1];
 				a[j+1]=temp;
+				flag=0;
 			}
-			else if(a[j]<a[j+1])
-				break;
+			
 		}
+		if (flag) 
+		{
+			break;
+		}
+
 	}
 	printf("\n\nAfter sortion :\n");
 	for(i=0;i<n;i++)
