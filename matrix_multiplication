@@ -1,6 +1,6 @@
 //using all functions
 #include<stdio.h>
-#include<conio.h>
+
 
 void readarr(int a[10][10],int row,int col)
 {
