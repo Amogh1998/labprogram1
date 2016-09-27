@@ -1,1 +1,46 @@
 
+//bubble sort
+#include<stdio.h>
+void bs(int a[],int n);
+int main()
+{
+	int i,n,a[10];
+	printf("Enter how many numbers : ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("\nEnter the %dth number : ",i+1);
+		scanf("%d",&a[i]);
+	}
+	printf("\nThe entered values are (before sortion) :\n");
+	for(i=0;i<n;i++)                    //loop to print the input
+		printf("%d\t",a[i]);
+	bs(a,n);
+	printf("\n\nAfter sortion :\n");
+	for(i=0;i<n;i++)
+		printf("%d\t",a[i]);
+	return 0;
+}
+void bs(int a[], int n)
+{
+	int i,j,temp,flag = 1;
+	for ( i=0;i<n-1;i++) 
+	{
+		for (j=0;j<n-1;j++) 
+		{
+			if(a[j] > a[j+1]) 
+			{
+				temp = a[j];
+				a[j] = a[j+1];
+				a[j+1] = temp;
+				flag = 0;
+			}
+	}
+	if (flag)
+	{
+		break;
+	}
+}
+return ;
+}
+
