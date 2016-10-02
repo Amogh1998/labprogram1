@@ -1,30 +1,27 @@
 //square root
 #include<stdio.h>
 #include<math.h>
-float sqrt(float);
+float mysqrt(float n);
 int main()
 {
-	float n,s;
-	int flag=0;
-	printf("enter the number : ");
-	scanf("%f",&n);
-	s=sqrt(n);
-	if(flag==1)
-		printf("\nthe square root is : %f",s);
-	else if(flag==0)
-		printf("\nsquare root is not possible ");
+	float x,y;
+	printf("Enter the number : ");
+	scanf("%f",&x);
+	y=mysqrt(x);
+	printf("\nThe calculated square root is : %.3f",y);
+	printf("\nthe actual square root is : %.3f",sqrt(x));
 	return 0;
 }
-float sqrt(float x)
+float mysqrt(float n)
 {
-	float y;
-	int flag=0,i;
-	if(x>0)              //square root of negative number is not possible
+	float r1,r2,error;
+	error=0.00001;
+	r1=n/2;
+	r2=n/r1;
+	while(fabs(r1-r2)>error)
 	{
-		y=x/2;                //sqrt of a no. will be <=it's half
-		for(i=0;i<x;i++)        //loop for finding the sqrt
-			y=(y+(x/y))/2;
-		flag=1;
+		r1=(r1+r2)/2;
+		r2=n/r1;
 	}
-	return y;
+	return r1;
 }
